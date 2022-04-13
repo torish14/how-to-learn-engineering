@@ -103,7 +103,9 @@ introImage: 'ponpo-san.jpg'
 
 # VARK とは？
 
-## 自分の学習タイプがわかるフレームワーク
+## --- 自分の学習タイプがわかるフレームワーク
+
+<br>
 
 - 視覚タイプ(Visual)
 - 聴覚タイプ(Aural)
@@ -149,7 +151,9 @@ introImage: 'ponpo-san.jpg'
 
 ---
 
-# 自分がどの VARK タイプなのか無料テストでわかります。
+# あなたはどのタイプでしたか？
+
+## 自分がどの VARK タイプなのか無料テストでわかります。
 
 <br>
 
@@ -165,7 +169,9 @@ introImage: 'ponpo-san.jpg'
 
 # SMART とは？
 
-## 目標設定のためのフレームワーク
+## --- 目標設定のためのフレームワーク
+
+<br>
 
 - 具体的（Specific）
 - 測定可能（Measurable）
@@ -222,7 +228,9 @@ introImage: 'ponpo-san.jpg'
 
 # SQ3R とは？
 
-## 読書の仕方がわかるフレームワーク
+## --- 読書の仕方がわかるフレームワーク
+
+<br>
 
 - 調査（Survey）
 - 質問（Question）
