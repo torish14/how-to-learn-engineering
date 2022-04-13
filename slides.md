@@ -1,383 +1,334 @@
 ---
 # try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
+theme: unicorn
 class: 'text-center'
-# https://sli.dev/custom/highlighters.html
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
 drawings:
   persist: false
+handle: 'torish14'
+layout: intro
+introImage: 'ponpo-san.jpg'
 ---
 
-# Welcome to Slidev
+# エンジニアの学習法ハック - vol.8
 
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+学習に役立つフレームワーク 3 選
 
 ---
 
-# What is Slidev?
+# まずは、自己紹介
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+- 📛 Name - torish14（[@torish14 - Twitter](https://twitter.com/torish14_str)）
+- 💼 Career - 独学 → ハッカソン優勝 → フリーランスエンジニア → 法人の代表兼エンジニア
+- 🧑‍💻 Now Working - 性教育アプリの開発
+- 💚 Love - UX デザインとパフォーマンス・チューニング
+- 🤖 Languages - TypeScript、Nuxt、Svelte
+- 📖 Learning - 低レイヤー
 
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+[ハッカーと話そう | ハッカー飯 - hackermeshi.com](https://hackermeshi.com)
 
-Block
-$$
-\begin{array}{c}
+---
 
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+# 本日はよろしくお願いします！
 
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+---
 
-\nabla \cdot \vec{\mathbf{B}} & = 0
+# 突然ですが、みなさんに質問があります。
 
-\end{array}
-$$
+---
+
+# なぜ、みなさんは「学習法」について学ぶのでしょうか？
+
+---
+
+# なぜ、「学習法」について学ぶのか？
+
+## --- それは、「より良い学習法を身につけて、さらなる成長を遂げるため。」
+
+---
+
+# では、どうしたらより良い「学習法」を身につけられるのか？
+
+---
+
+# より良い学習法の身につけ方
+
+あなたはどの段階にいますか？
+
+1. 自分に合った学習法は一体なにか？仮説を立てる
+2. 仮説をもとに学習計画を立てる
+3. 学習計画を実践する
+4. 成果が上げられているか確認する
+5. 本や勉強会でさらなる知識を仕入れる
+
+---
+
+# 今日のゴール
+
+---
+
+# 今日のゴール
+
+- 自分の学習タイプを知る
+- 今日学んだ学習法を整理する
+- 今日からも実践できそうなことは？
+
+---
+
+# お待たせしました。今日のテーマです。
+
+---
+
+# 学習に役立つフレームワーク 3 選
+
+1. VARK
+2. SMART
+3. SQ3R
+
+---
+
+# フレームワーク①
+
+## --- VARK
+
+---
+
+# VARK とは？
+
+## 自分の学習タイプがわかるフレームワーク
+
+- 視覚タイプ(Visual)
+- 聴覚タイプ(Aural)
+- 読み書きタイプ(Read/Write)
+- 運動感覚タイプ(Kinesthetic)
 
 <br>
 
-[Learn more](https://sli.dev/guide/syntax#latex)
+[VARK a guide to learning preferences](https://vark-learn.com/home-japanese/)
 
 ---
 
-# Diagrams
+# 👀 視覚タイプ
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
+- 物事が視覚的に表現されると頭に入りやすい
+- 地図や図表、絵や写真、動画を使うと学習しやすい
+- 電話番号を覚えるならボタンを押す指の動きのパターンを視覚的に捉えるとよい
 
 ---
-layout: center
-class: text-center
+
+# 🦻 聴覚タイプ
+
+- 情報は音として取り入れるほうが頭に残りやすい
+- 講義や議論を通じて学習するとよい
+- 電話番号を覚えるならダイアル音を頼りにするとよい
+
 ---
 
-# Learn More
+# ✍️ 読み書きタイプ
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+- 文字を使うと情報を取り入れやすい
+- 文章を読んだり、自分で説明する文章を書いたりすると学習しやすい
+- 電話番号を覚えるなら紙に書いたり、語呂合わせをするのがよい
+
+---
+
+# 🏃 運動感覚タイプ
+
+- 体の動きを利用して情報を取り入れるとよい
+- 覚えたときに自分がいた場所や覚えたときの体の感覚を手がかりに情報を思い出しやすい
+- 反復練習が最も効果的
+- 電話番号を覚えるならダイアルを押す一連の動きをダンスするとよい
+
+---
+
+# 自分がどの VARK タイプなのか無料テストでわかります。
+
+<br>
+
+[VARK - アンケート](https://vark-learn.com/the-vark-questionnaire-japanese/)
+
+---
+
+# フレームワーク②
+
+## --- SMART
+
+---
+
+# SMART とは？
+
+## 目標設定のためのフレームワーク
+
+- 具体的（Specific）
+- 測定可能（Measurable）
+- 達成可能（Achievable）
+- 適切（Relevant）
+- 期限（Time-boxed）
+
+---
+
+# 具体的とは？
+
+- 目標は具体的じゃないと行動できない
+- アプリ開発に例えるなら、「色んな人を幸せにするサービスをつくるぞ！」だけではいけない
+- 「だれ」の「どんな問題」を解決するの？
+
+---
+
+# 測定可能とは？
+
+- 目標は測定可能じゃないと達成できたかどうかわからない
+- アプリ開発に例えるなら、「ユーザー数を増やすぞ！」だけではいけない
+- 「月間アクティブユーザー数を 10,000 人にするぞ！」
+
+---
+
+# 達成可能とは？
+
+- どれだけ大きな目標を掲げても、ひとつひとつが達成可能じゃないと達成できない
+- アプリ開発に例えるなら、「今のユーザー数はどれくらい？」
+- 長期的な目標を分割して一日のタスクを考えましょう
+
+---
+
+# 適切とは？
+
+- 「それは自分にとって意義のあることかい？」
+- 「それは自分にとって熱中できることかい？」
+
+---
+
+# 期限とは？
+
+- これが最も重要な要素
+- 期限を設けないといつまで経っても行動しない
+- いつまで経っても行動しないということは、その目標が達成されることは決してない
+
+---
+
+# フレームワーク③
+
+## --- SQ3R
+
+---
+
+# SQ3R とは？
+
+## 読書の仕方がわかるフレームワーク
+
+- 調査（Survey）
+- 質問（Question）
+- 読書（Read）
+- 復唱（Recite）
+- まとめ（Review）
+
+---
+
+# 調査とは？
+
+- 全体像を把握するため、まずは目次と要約を読む
+- 目次と要約を最初によく読むことで予備知識がつく
+- 知識が相互に紐付きやすい
+
+---
+
+# 質問とは？
+
+- 質問点を書き出す
+- なんとなく読むな！
+- 「あなたはどうしてその本を手に取ったの？」
+
+---
+
+# 読書とは？
+
+- 全文を読む
+- 個人的には、最初は「興味のあるところ」や「実用的なところ」だけでよいと思う
+- 実践を積んで本の内容が本当に理解でき始めたら全文読むとよいかな
+
+---
+
+# 復唱とは？
+
+- 要約して自分の言葉でノートなどにまとめる
+- ちゃんと自分が本の内容を理解できたか確認する第一歩になる
+
+---
+
+# まとめとは？
+
+- もう一度読んで、疑問点なんかを更にノートに書き出す
+- 読書会などで仲間と「議論」や「輪読」をするとより理解が深まる
+
+---
+
+# まとめ
+
+---
+
+# 学習に役立つフレームワーク 3 選
+
+1. VARK
+2. SMART
+3. SQ3R
+
+---
+
+# 学習に役立つフレームワーク 3 選
+
+1. VARK
+2. SMART
+3. SQ3R
+
+---
+
+# より良い学習法の身につけ方
+
+1. 自分に合った学習法は一体なにか？仮説を立てる
+	- VARK
+2. 仮説をもとに学習計画を立てる
+	- SMART
+3. 学習計画を実践する
+	- 行動力や継続力の工夫についてはまたどこかで。
+4. 成果は上げられているか確認する
+	- SMART
+5. 本や勉強会でさらなる知識を仕入れる
+	- SQ3R
+
+---
+
+# 今日のゴールの確認
+
+- 自分の学習タイプは知れましたか？
+	- ちなみに僕は運動感覚タイプと視覚タイプ、聴覚タイプでした
+- 今日学んだ学習法を整理しましたか？
+	- もちろん僕の発表以外でも大丈夫🙆‍♂️
+- 今日からも実践できそうなことはなんですか？
+	- 明日やろうはバカ野郎
+
+---
+
+# 最後まで聴いてくださって、ありがとうございました！
+
+---
+
+<img src="ponpo-san.jpg" alt="プロフィール画像" style="border-radius: 50%; height: 160px;width: 160px;">
+
+<br>
+
+[@torish14 - Twitter](https://twitter.com/torish14_str)
+
+## 参考文献
+
+<br>
+
+- [MIND パフォーマンス HACKS - 脳と心のユーザーマニュアル](https://www.oreilly.co.jp/books/9784873113371/)
+- [リファクタリング・ウェットウェア - 達人プログラマーの思考法と学習法](https://www.oreilly.co.jp/books/9784873114033/)
